@@ -1,0 +1,17 @@
+JWTSecretKey = "5d41402abc4b2a76b9719d911017c592"
+
+[ServiceConfiguration]
+Port = 8181
+Debug = true
+
+[PostgresConfiguration]
+Host = "127.0.0.1"
+Port = 5532
+User = "root"
+Password = "root"
+DBName = "todo_server"
+
+[LoggerConfiguration]
+Filename = "todo_server.log"
+MaxSize = 20
+

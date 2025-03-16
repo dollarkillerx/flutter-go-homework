@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres:17.2-alpine3.20
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - 5532:5432
+#    volumes:
+#      - /data/compose/postgresql/data:/var/lib/postgresql/data

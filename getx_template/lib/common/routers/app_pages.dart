@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:getx_template/pages/home/binding.dart';
+import 'package:getx_template/pages/home/index.dart';
 import 'package:getx_template/pages/login/binding.dart';
 import 'package:getx_template/pages/login/index.dart';
 import '../../components/unknown_route.dart';
@@ -17,12 +19,19 @@ String InitRoute () {
 class AppPages {
 
   static final routers = [
-    // 主页导航
+    // login
     GetPage(
       name: AppRoutes.Login,
       page: () => LoginPage(),
       binding: LoginBinding(),
     ),
+
+    // home
+    GetPage(
+      name: AppRoutes.Home,
+      page: () => HomePage(),
+      binding: HomeBinding(),
+    )
   ];
 
   static final unknownRoute = GetPage(

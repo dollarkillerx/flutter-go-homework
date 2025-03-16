@@ -18,7 +18,7 @@ func main() {
 	app := gin.Default()
 	storage := NewStorage()
 
-	v1Group := app.Group("/v1")
+	v1Group := app.Group("/api/v1")
 	{
 		v1Group.POST("/register", func(ctx *gin.Context) {
 			var request RegisterRequest

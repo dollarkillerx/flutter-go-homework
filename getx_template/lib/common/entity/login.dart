@@ -1,9 +1,9 @@
-class JWT {
+class Jwt {
   String? jwt;
 
-  JWT({this.jwt});
+  Jwt({this.jwt});
 
-  JWT.fromJson(Map<String, dynamic> json) {
+  Jwt.fromJson(Map<String, dynamic> json) {
     jwt = json['jwt'];
   }
 

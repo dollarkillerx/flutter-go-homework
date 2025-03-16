@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import '../routers/app_routes.dart';
 import 'local_storage.dart';
 
-const SERVER_API_URL = "http://119.188.250.132:8011/api";
+const SERVER_API_URL = "http://127.0.0.1:8181/v1";
 const APPID = "80f8342f0489";
 const APPVersion = 0.01;
 

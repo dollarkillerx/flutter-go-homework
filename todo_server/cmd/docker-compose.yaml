@@ -1,0 +1,6 @@
+services:
+  todo_service:
+    image: todo_service:latest
+    ports:
+      - "8181:8181"
+    restart: unless-stopped
