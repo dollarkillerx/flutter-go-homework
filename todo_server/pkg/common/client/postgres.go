@@ -14,7 +14,7 @@ import (
 
 func PostgresClient(conf config.PostgresConfiguration, gormConfig *gorm.Config) (*gorm.DB, error) {
 	if conf.TimeZone == "" {
-		conf.TimeZone = "Asia/Shanghai"
+		conf.TimeZone = "Asia/Tokyo"
 	}
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%d TimeZone=%s", conf.Host, conf.User, conf.Password, conf.DBName, conf.Port, conf.TimeZone)
 	if !conf.SSLMode {
