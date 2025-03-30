@@ -22,7 +22,7 @@ func (t *TaskController) getTasks(ctx *gin.Context) {
 		return
 	}
 
-	todos, err := t.storage.GetTodosByEmail(user_id.(string))
+	todos, err := t.storage.GetTodosByUserId(user_id.(string))
 	if err != nil {
 		response.Response(ctx, 400, err.Error(), nil)
 		return

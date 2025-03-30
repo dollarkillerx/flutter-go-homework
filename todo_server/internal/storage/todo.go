@@ -6,9 +6,9 @@ import (
 	"todo_server/pkg/models"
 )
 
-func (s *Storage) GetTodosByEmail(email string) ([]models.Todo, error) {
+func (s *Storage) GetTodosByUserId(userId string) ([]models.Todo, error) {
 	var todos []models.Todo
-	err := s.db.Where("user_id = ?", email).Find(&todos).Error
+	err := s.db.Where("user_id = ?", userId).Find(&todos).Error
 	if err != nil {
 		log.Info().Msgf("Failed to get todos %s", err)
 		return nil, errors.WithStack(err)
