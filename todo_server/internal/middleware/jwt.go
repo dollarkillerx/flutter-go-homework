@@ -31,7 +31,7 @@ func Auth(secretKey string) gin.HandlerFunc {
 		// 检查token是否有效
 		if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
 			c.Set("claims", claims)
-			c.Set("user_id", claims["user_id"])
+			c.Set("user_id", claims["user_id"]) // 将用户ID添加到上下文
 		} else {
 			response.Response(c, 401, "invalid token", nil)
 			c.Abort()

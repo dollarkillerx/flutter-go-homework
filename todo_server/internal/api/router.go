@@ -2,6 +2,7 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
+	"todo_server/internal/middleware"
 )
 
 // Router sets up the API routes for the server.
@@ -22,12 +23,13 @@ func (a *Server) Router() {
 		v1.POST("/public/register", NewUserController(a.storage, a.conf).register) // 用户注册
 		v1.POST("/public/login", NewUserController(a.storage, a.conf).login)       // 用户登录
 
-		//private := v1.Group("/private", middleware.Auth(a.conf.JWTSecretKey))
-		//{
-		//	private.GET("/tasks", a.getTasks)   // 获取任务列表
-		//	private.POST("/task", a.createTask) // 创建任务
-		//	private.PUT("/task", a.updateTask)  // 更新任务
-		//
+		private := v1.Group("/private", middleware.Auth(a.conf.JWTSecretKey))
+		{
+			private.GET("/tasks", NewTaskController(a.storage).getTasks) // 获取当前用户下所有的任务
+			//private.POST("/task", a.createTask) // 创建任务
+			//private.PUT("/task", a.updateTask)  // 更新任务
+		}
+
 	}
 }
 
