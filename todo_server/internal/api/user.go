@@ -70,9 +70,9 @@ func (u *UserController) login(ctx *gin.Context) {
 
 	// gen jwt token
 	claims := jwt.MapClaims{
-		"sub": user.Email,                            // 用户 ID
-		"iat": time.Now().Unix(),                     // 签发时间
-		"exp": time.Now().Add(time.Hour * 24).Unix(), // 过期时间 24 小时后
+		"user_id": user.ID,                               // 用户 ID
+		"iat":     time.Now().Unix(),                     // 签发时间
+		"exp":     time.Now().Add(time.Hour * 24).Unix(), // 过期时间 24 小时后
 	}
 
 	// 创建一个新的 Token
