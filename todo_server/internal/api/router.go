@@ -19,8 +19,8 @@ func (a *Server) Router() {
 
 	v1 := a.app.Group("/api/v1")
 	{
-		v1.POST("/public/register", NewUserController(a.storage).register) // 用户注册
-		v1.POST("/public/login", NewUserController(a.storage).login)       // 用户登录
+		v1.POST("/public/register", NewUserController(a.storage, a.conf).register) // 用户注册
+		v1.POST("/public/login", NewUserController(a.storage, a.conf).login)       // 用户登录
 
 		//private := v1.Group("/private", middleware.Auth(a.conf.JWTSecretKey))
 		//{
@@ -28,9 +28,6 @@ func (a *Server) Router() {
 		//	private.POST("/task", a.createTask) // 创建任务
 		//	private.PUT("/task", a.updateTask)  // 更新任务
 		//
-		//	// 当app前台活跃的时候使用拉模式
-		//	private.GET("/notice", a.notice) // 获取通知
-		//}
 	}
 }
 

@@ -10,6 +10,8 @@ type Storage struct {
 }
 
 func NewStorage(db *gorm.DB) *Storage {
+
+	// 自动迁移
 	db.AutoMigrate(models.Todo{}, models.User{})
 
 	return &Storage{db: db}
