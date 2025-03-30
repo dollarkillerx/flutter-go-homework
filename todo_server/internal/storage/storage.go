@@ -6,7 +6,7 @@ import (
 )
 
 type Storage struct {
-	db *gorm.DB
+	db *gorm.DB // pgsql
 }
 
 func NewStorage(db *gorm.DB) *Storage {
