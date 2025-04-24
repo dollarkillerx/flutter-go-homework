@@ -10,8 +10,8 @@ class HomePage extends GetView<HomeController> {
         body: IndexedStack(
           index: controller.pageIdx,
           children: [
-            Center(child: Text('首页')), // 示例页面1
-            Center(child: Text('我的')), // 示例页面2
+            todoPage(), // todo page
+            Center(child: Text('我的', style: TextStyle(fontSize: 30, color: Colors.blue, fontWeight: FontWeight.bold),)), // 示例页面2
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -30,5 +30,58 @@ class HomePage extends GetView<HomeController> {
         ),
       );
     });
+  }
+
+
+  Widget todoPage() {
+    return SafeArea(child: Container(
+      width: Get.width,
+      child: IndexedStack(
+          index: controller.todoIdx,
+          children: [
+            Container(
+              child: Center(child: Text("Todo List"),),
+            ),
+            Container(
+              width: Get.width,
+              child: Column(
+                children: [
+                  Text("Create TODO", style: TextStyle(
+                    fontSize: 30, fontWeight: FontWeight.bold, color: Colors.blue,
+                  ),),
+                  SizedBox(height: 50,),
+                  TextField(
+                    controller: controller.title,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Title',
+                      hintText: 'please input title',
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                  TextField(
+                    controller: controller.description,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Description',
+                      hintText: 'please input description',
+                    ),
+                      ),
+                  SizedBox(height: 20,),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.blue),
+                    ),
+                    child: Text("Create", style: TextStyle(color: Colors.white),),
+                    onPressed: () {
+
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ]
+      ),
+    ));
   }
 }

@@ -43,6 +43,22 @@ class ApiRequest {
     return resp;
   }
 
+  Future<Response<dynamic>> put(
+      {required String url, Map<String, dynamic>? variables}) async {
+    Response resp = await _dio().put(
+      url,
+      data: variables,
+      options: Options(
+        contentType: Headers.jsonContentType, // 明确指定为 JSON
+      ),
+    );
+    if (resp.statusCode != 200) {
+      throw '${resp.data}';
+    }
+
+    return resp;
+  }
+
   Future<Response<dynamic>> get(
       {required String url, Map<String, dynamic>? variables}) async {
     Response resp = await _dio().get(
