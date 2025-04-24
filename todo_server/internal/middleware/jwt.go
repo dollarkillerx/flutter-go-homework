@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"encoding/json"
 	"fmt"
 
 	"github.com/gin-gonic/gin"
@@ -19,7 +20,7 @@ func Auth(secretKey string) gin.HandlerFunc {
 			if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 				return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
 			}
-			return secretKey, nil
+			return []byte(secretKey), nil
 		})
 
 		if err != nil {
@@ -32,6 +33,12 @@ func Auth(secretKey string) gin.HandlerFunc {
 		if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
 			c.Set("claims", claims)
 			c.Set("user_id", claims["user_id"]) // 将用户ID添加到上下文
+
+			print(claims["user_id"])
+			marshal, err := json.Marshal(claims)
+			if err == nil {
+				fmt.Println(string(marshal))
+			}
 		} else {
 			response.Response(c, 401, "invalid token", nil)
 			c.Abort()

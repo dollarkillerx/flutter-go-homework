@@ -1,6 +1,7 @@
 package api
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	"github.com/golang-jwt/jwt/v5"
@@ -67,6 +68,8 @@ func (u *UserController) login(ctx *gin.Context) {
 		response.Response(ctx, 400, err.Error(), nil)
 		return
 	}
+
+	fmt.Println(user)
 
 	// gen jwt token
 	claims := jwt.MapClaims{

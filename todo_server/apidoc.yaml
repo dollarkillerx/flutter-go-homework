@@ -1,0 +1,312 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1728457828581
+  modified: 1728457828581
+collection:
+  - name: TodoServer
+    meta:
+      id: fld_2f9cd0cc5ad84384b2af2ecece5bfee4
+      created: 1745469854313
+      modified: 1745472298560
+      sortKey: -1745469854313
+    children:
+      - url: http://127.0.0.1:8181/api/v1/public/register
+        name: register
+        meta:
+          id: req_21d3502162444a24bee51b831815ffd1
+          created: 1745469856738
+          modified: 1745470668340
+          isPrivate: false
+          sortKey: -1745469856738
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "a@a.com",
+            	"password": "password"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.0.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8181/api/v1/public/login
+        name: login
+        meta:
+          id: req_08a6e6014d3f4acf97c338aac71158a7
+          created: 1745470674699
+          modified: 1745470706763
+          isPrivate: false
+          sortKey: -1745469856838
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "a@a.com",
+            	"password": "password"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8181/api/v1/private/tasks
+        name: getTasks
+        meta:
+          id: req_8397d755cb2d465eba2cea6268a53502
+          created: 1745470744328
+          modified: 1745472255320
+          isPrivate: false
+          sortKey: -1745470744328
+        method: GET
+        headers:
+          - name: Authorization
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDU1NTg2NDMsImlhdCI6MTc0NTQ3MjI0MywidXNlcl9pZCI6IjE4OTlkZWMxLWU5OWMtNDk3Zi1hM2JhLWJjYmExYzk3YmEwZCJ9.dmnlv-HuUOy4MjR_gEU9pPrQsP2nTJIWIKEO81RE-3M
+            id: pair_21e213fda7ff4525b0e008ba55e90efd
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8181/api/v1/private/task
+        name: createTask
+        meta:
+          id: req_7c50de10ed47484eab4333c97446fe43
+          created: 1745471181778
+          modified: 1745472251754
+          isPrivate: false
+          sortKey: -1745471181778
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "this is title",
+            	"description": "descriptiondescriptiondescription"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_ea6c52da49fc4ae2a9bc58346b3cf286
+          - name: Authorization
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDU1NTg2NDMsImlhdCI6MTc0NTQ3MjI0MywidXNlcl9pZCI6IjE4OTlkZWMxLWU5OWMtNDk3Zi1hM2JhLWJjYmExYzk3YmEwZCJ9.dmnlv-HuUOy4MjR_gEU9pPrQsP2nTJIWIKEO81RE-3M
+            id: pair_fcd279ae979a476abebe0fb19673349e
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8181/api/v1/private/task
+        name: updateTask
+        meta:
+          id: req_39a1c46731984a23b67f59c3ea0f95f6
+          created: 1745471211010
+          modified: 1745472290366
+          isPrivate: false
+          sortKey: -1745471211010
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            		{
+            			"id": "2063ebad-a336-40ac-af5f-396fb70ddbe1",
+            			"user_id": "1899dec1-e99c-497f-a3ba-bcba1c97ba0d",
+            			"title": "this is title11111",
+            			"description": "descriptiondescriptiondes12cription"
+            		}
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_3f934b20d90f4c6ea7c2ddef384a150d
+          - name: Authorization
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDU1NTg2NDMsImlhdCI6MTc0NTQ3MjI0MywidXNlcl9pZCI6IjE4OTlkZWMxLWU5OWMtNDk3Zi1hM2JhLWJjYmExYzk3YmEwZCJ9.dmnlv-HuUOy4MjR_gEU9pPrQsP2nTJIWIKEO81RE-3M
+            id: pair_13a27958569f4bd39dbe1476d2a36eed
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1728457846468
+    modified: 1728458477953
+  cookies:
+    - key: mod_auth_openidc_state_r-36e3MRd8Vj6VcYLnG0Wfd_m7g
+      domain: e-hiden3.sagawa-exp.co.jp
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2024-10-09T07:18:13.340Z
+      lastAccessed: 2024-10-09T07:19:19.448Z
+      id: b5bd2fc4-46be-4585-b615-29f458301042
+    - key: NSC_f-ijefo3-ttm-wt-001
+      value: ffffffff0934cd1745525d5f4f58455e445a4a423660
+      domain: e-hiden3.sagawa-exp.co.jp
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2024-10-09T07:18:13.343Z
+      lastAccessed: 2024-10-09T07:18:13.343Z
+      id: a7aec56b-9b2e-4df4-a3c2-00727f3f6107
+    - key: AUTH_SESSION_ID
+      value: 9a74c455-100c-472d-944b-50c48ff9ad58.sgwtkcv004w
+      domain: e-hiden3.sagawa-exp.co.jp
+      path: /auth/realms/sc/
+      secure: true
+      httpOnly: true
+      extensions:
+        - Version=1
+      hostOnly: true
+      creation: 2024-10-09T07:18:13.343Z
+      lastAccessed: 2024-10-09T07:19:57.296Z
+      id: 67bf849c-f839-4c87-b809-f5d266bd7bc8
+    - key: KC_RESTART
+      value: eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIwOWJmNmRkNi01OTZhLTRkNWMtOGY5Ni1hOGFiNTVjMjQ2MTcifQ.eyJjaWQiOiJzYWdhd2EtZXhwLmNvLmpwIiwicHR5Ijoib3BlbmlkLWNvbm5lY3QiLCJydXJpIjoiaHR0cHM6Ly9lLWhpZGVuMy5zYWdhd2EtZXhwLmNvLmpwL3JlZGlyZWN0L3JlZGlyZWN0X3VyaSIsImFjdCI6IkFVVEhFTlRJQ0FURSIsIm5vdGVzIjp7InNjb3BlIjoib3BlbmlkIiwiaXNzIjoiaHR0cHM6Ly93d3cuZS1zZXJ2aWNlLnNhZ2F3YS1leHAuY28uanAvYXV0aC9yZWFsbXMvc2MiLCJyZXNwb25zZV90eXBlIjoiY29kZSIsInJlZGlyZWN0X3VyaSI6Imh0dHBzOi8vZS1oaWRlbjMuc2FnYXdhLWV4cC5jby5qcC9yZWRpcmVjdC9yZWRpcmVjdF91cmkiLCJzdGF0ZSI6IlpMX29ZQVZMZTdxbXVDNUE3SzJpTW5Lc3B2WSIsIm5vbmNlIjoiazVmVlpjQ2JmOGF4ZjA5WkFkaEpJZEJKY25XenVKclJmQi1sd082SExuVSJ9fQ.4efA3HL6H6t0dD8o7f47-OkhD6xKRfY8ZsQINt501cw
+      domain: e-hiden3.sagawa-exp.co.jp
+      path: /auth/realms/sc/
+      secure: true
+      httpOnly: true
+      extensions:
+        - Version=1
+      hostOnly: true
+      creation: 2024-10-09T07:18:13.344Z
+      lastAccessed: 2024-10-09T07:19:57.296Z
+      id: 9e347ea9-2ebd-49ee-98db-3a85a1305b33
+    - key: KEYCLOAK_FR
+      value: "null"
+      maxAge: 157680000
+      domain: e-hiden3.sagawa-exp.co.jp
+      path: /auth/realms/sc/
+      secure: true
+      httpOnly: true
+      extensions:
+        - Version=1
+      hostOnly: true
+      creation: 2024-10-09T07:18:13.344Z
+      lastAccessed: 2024-10-09T07:19:57.297Z
+      sameSite: none
+      id: bc60091e-8d8f-4cd7-b20e-1bb84a06d79e
+    - key: KEYCLOAK_FR_LEGACY
+      value: "null"
+      maxAge: 157680000
+      domain: e-hiden3.sagawa-exp.co.jp
+      path: /auth/realms/sc/
+      secure: true
+      httpOnly: true
+      extensions:
+        - Version=1
+      hostOnly: true
+      creation: 2024-10-09T07:18:13.344Z
+      lastAccessed: 2024-10-09T07:19:57.297Z
+      id: e6608ca0-7d05-4945-992b-a3d5585b882e
+    - key: NSC_f-tfswjdf-ttm-wt-001
+      value: ffffffff0934cd1045525d5f4f58455e445a4a423660
+      domain: e-hiden3.sagawa-exp.co.jp
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2024-10-09T07:18:13.344Z
+      lastAccessed: 2024-10-09T07:21:17.953Z
+      sameSite: none
+      id: 739abe0c-de9f-47de-aa89-df519ff6d930
+    - key: mod_auth_openidc_state_KiBuxK7rFiuGT7GO7YOtxRI6dd8
+      domain: e-hiden3.sagawa-exp.co.jp
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2024-10-09T07:18:36.822Z
+      lastAccessed: 2024-10-09T07:19:57.296Z
+      id: d6925249-40b1-4b63-8921-72314bcbcea8
+    - key: mod_auth_openidc_state_5gHyP2fMXQ9gTxwsYIPAyiaDcNU
+      domain: e-hiden3.sagawa-exp.co.jp
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2024-10-09T07:19:05.067Z
+      lastAccessed: 2024-10-09T07:21:14.432Z
+      id: e7e2d116-80ba-41ec-a629-43e4c6c342fc
+    - key: mod_auth_openidc_state_JkPt8zwfV_rymZUkoSZ26bmDLwA
+      domain: e-hiden3.sagawa-exp.co.jp
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2024-10-09T07:19:19.448Z
+      lastAccessed: 2024-10-09T07:21:17.953Z
+      id: 61b6d290-3296-454e-af26-a9dd498b2ab9
+    - key: mod_auth_openidc_state_ZL_oYAVLe7qmuC5A7K2iMnKspvY
+      value: eyJhbGciOiAiZGlyIiwgImVuYyI6ICJBMjU2R0NNIn0..4XJWtVu5mqLnmuts.eDn2suvUMQ5oNSQO8qsnIoXbY03W9c_HdmADNG1oiWbbzawJFazovmOET60-f7C8Bom7Jv7XlNIruiqTFnJ916VvIL5-BIsofXzXfSLwnl_bxRqTb1sWPZuuARqLyskMub4oIwZNSXVYFSMVSgPo051DrKSy07sLQC8zKi8udufn-0_XNM--QqbNDThq-dAOe_xKzyquDga3VZd2r2MFE_U2B_W_g5jgYxJIF8MclCj5QLk-UrzKo8nPD4cnRCwQz5FPJ7SsZofYlgvoq6bjbnY6jPmdgNb8nZFCj-7s-ZCg416hxp7dm6HFnYG8r7wRJ1u4ZrcYI2zuJ1xTTrRecIZMEPtwkzGWtUzIoJ74ueCAGob7KiLxB32YOHxq8D0wuuaAs26D_SY6vKuJFBEwJB08B0ikTJGh-UdiJ5oNZqJmgf_sRU5fFcU496O3Iiw-uQGSbYKmbxVwedvFCt9eNkEeS0KQ9vJt3xQ_qHEvQowI9jtn0UaZ__cuC4PBXR4C-Q.jrM4CuCRS8DxxBa4F_3E_Q
+      domain: e-hiden3.sagawa-exp.co.jp
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2024-10-09T07:19:57.296Z
+      lastAccessed: 2024-10-09T07:19:57.296Z
+      sameSite: none
+      id: 9d0b1d33-3db0-4c73-8cfc-1db55313c114
+    - key: mod_auth_openidc_state_6nDm73Mpsy9aAahE5ZL2BJjB_t0
+      value: eyJhbGciOiAiZGlyIiwgImVuYyI6ICJBMjU2R0NNIn0..oZCgEA229ExV7W3a.lq1Em7THmPHZf_eXxtudkRdIdi_FjWS8bb1XSlEYyiMGA_KSyETQOEfSMJHKCo7sU0S_mqc1DRZZhEutjh4dcQSycnIJ3nQVLe0X-D_giDV0xzovUZSeXerd5N_-zRrcWBSAQ_QgBh33cKGbfzim8W94-TphfxYIHQdGETE1w7WpQ8mwx3fdIENqdskD5_qWfgkLy5TPpiacbD3RxfGZuH6lJeDk7sTeEYz9gRysQwdDCZBZgAz6r80TslTl5EyHkN8hjRKQ32CPM5FZm-hPBgpTLmoU3nDh6IaD3s84XV66CYiFK0ST85Sa9mT4HXFwY6XJqBobeItBh6_sbwrPnWcQkal7ZG24SHAquQq_ETNGAr3TRBgX3HPv6I68hEyN-NghY8zeaTNmvT7xsiMjn9pF8TN-1-fQGvD-LoPXylVZUEuwH7WjKEXJeXlijNSOiaQ3-rfRwjordpdqiPef0ZN7iy_J5akxvKx2WNFE7MKbcGWyJpVRFNtK2YYLlPrdGA.4KNqL_sNylVJmkje8b3_jA
+      domain: e-hiden3.sagawa-exp.co.jp
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2024-10-09T07:21:14.432Z
+      lastAccessed: 2024-10-09T07:21:14.432Z
+      sameSite: none
+      id: 22a3e97f-f385-47a9-ad1e-0a01544dfc2f
+    - key: mod_auth_openidc_state_Tx456W9fvroUP_IQ6Cl_MPRhxiA
+      value: eyJhbGciOiAiZGlyIiwgImVuYyI6ICJBMjU2R0NNIn0..kqFXSWGD0_4jOzVN.a9zUuOjavfKNaxUGUzBmd6i7FgTptjNv4uaP0Sl5eWSF3oHrOVQPPN1FH9y7dqeelckjll9NvDzGGrkJXQuJ6hnZNIldI5kX4YzlIA2RV15C-sHixE0zbcQyCJvzKY7P8mvPKXSBcvdh4ik7WASGSxDe0FzU6DBPS0hcY3Lu_8gaz4arcx-efO1Qt_CKc_XyWS7Zz1UhteSApqZ0vFKAJ3RMuDRNEc5uN8lyl9zxi9Kntkl8C6ifCaLjKyh4EWspQR_OnBGVrjc9N8UlPbQC-6p-ncQPKBudlmFlf5lzaPOrN54va6-HEV8jiRJcAHOTyXVX-q-rahrbacoDCfhRkVBgB41gkXsJ4lXqk52JqB9PBIR2qm5KxFOlrpCYPoqbRuHlvg8XxPjfIl8zA7nbknlhT37HIUvfEiBqunOpB88Ga73yMwstw1f_sARYxyglfsNrjGkCeK5wLhVTGZjag6lpgK1EGSIJ0VE0cUkdVLCuBHQPB3rkoyPhlOPu8bSrjg.Gy6ep30_638QYXsB-p9ZmA
+      domain: e-hiden3.sagawa-exp.co.jp
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2024-10-09T07:21:17.953Z
+      lastAccessed: 2024-10-09T07:21:17.953Z
+      sameSite: none
+      id: 43b3b909-aaf2-48a7-bdf2-2fc38f48dd50
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1728457846414
+    modified: 1728457846414
+    isPrivate: false

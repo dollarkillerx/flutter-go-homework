@@ -6,7 +6,7 @@ Debug = true
 
 [PostgresConfiguration]
 Host = "127.0.0.1"
-Port = 5532
+Port = 5432
 User = "root"
 Password = "root"
 DBName = "todo_server"

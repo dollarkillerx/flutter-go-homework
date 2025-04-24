@@ -1,6 +1,7 @@
 package storage
 
 import (
+	"github.com/google/uuid"
 	"github.com/pkg/errors"
 	"github.com/rs/zerolog/log"
 	"todo_server/pkg/models"
@@ -16,7 +17,11 @@ func (s *Storage) RegisterUser(email string, password string) error {
 	}
 
 	// 不存在就创建
-	err = s.db.Create(&models.User{Email: email, Password: password}).Error
+	err = s.db.Create(&models.User{
+		BaseModel: models.BaseModel{
+			ID: uuid.New().String(),
+		},
+		Email: email, Password: password}).Error
 	if err != nil {
 		log.Info().Msgf("Failed to register user %s", err)
 		return errors.WithStack(err)
@@ -26,7 +31,7 @@ func (s *Storage) RegisterUser(email string, password string) error {
 
 func (s *Storage) LoginUser(email string, password string) (*models.User, error) {
 	var user models.User
-	err := s.db.Where("email = ? AND password = ?", email, password).First(&models.User{}).Error
+	err := s.db.Where("email = ? AND password = ?", email, password).First(&user).Error
 	if err != nil {
 		log.Info().Msgf("Failed to login user %s", err)
 		return nil, errors.WithStack(err)
