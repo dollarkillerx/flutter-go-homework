@@ -17,11 +17,19 @@ func (s *Storage) GetTodosByUserId(userId string) ([]models.Todo, error) {
 }
 
 func (s *Storage) CreateTodo(todo *models.Todo) error {
-
+	err := s.db.Create(todo).Error
+	if err != nil {
+		log.Error().Msgf("Failed to create todo: %s", err)
+		return errors.WithStack(err)
+	}
 	return nil
 }
 
 func (s *Storage) UpdateTodoByID(id string, todo *models.Todo) error {
-
+	err := s.db.Model(&models.Todo{}).Where("id = ?", id).Updates(todo).Error
+	if err != nil {
+		log.Error().Msgf("Failed to update todo: %s", err)
+		return errors.WithStack(err)
+	}
 	return nil
 }

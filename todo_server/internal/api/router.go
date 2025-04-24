@@ -25,9 +25,9 @@ func (a *Server) Router() {
 
 		private := v1.Group("/private", middleware.Auth(a.conf.JWTSecretKey))
 		{
-			private.GET("/tasks", NewTaskController(a.storage).getTasks) // 获取当前用户下所有的任务
-			//private.POST("/task", a.createTask) // 创建任务
-			//private.PUT("/task", a.updateTask)  // 更新任务
+			private.GET("/tasks", NewTaskController(a.storage).getTasks)   // 获取当前用户下所有的任务
+			private.POST("/task", NewTaskController(a.storage).createTask) // 创建任务
+			private.PUT("/task", NewTaskController(a.storage).updateTask)  // 更新任务
 		}
 
 	}
