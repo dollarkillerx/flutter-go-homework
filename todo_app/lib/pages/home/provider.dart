@@ -15,7 +15,7 @@ class HomeProvider extends ApiRequest {
 
   createTask(String title, String description) async {
     Response resp = await post(
-        url: "/private/tasks",
+        url: "/private/task",
         variables: {
           "title": title,
           "description": description

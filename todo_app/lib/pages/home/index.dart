@@ -39,11 +39,62 @@ class HomePage extends GetView<HomeController> {
       child: IndexedStack(
           index: controller.todoIdx,
           children: [
-            Container(
-              child: Center(child: Text("Todo List"),),
-            ),
+            SafeArea(child: Container(
+              width: Get.width,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        controller.todoIdx = 1;
+                        controller.update();
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.green.withAlpha(100),
+                          borderRadius: BorderRadius.circular(10),),
+                        child: Text("Add Task", style: TextStyle(fontSize: 30, color: Colors.blue, fontWeight: FontWeight.bold),),
+                      ),
+                    ),
+                    if (controller.taskItems != null)
+                      ...controller.taskItems!.map((task) => Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: Container(
+                          width: Get.width,
+                          padding: EdgeInsets.all(12),
+                          margin: EdgeInsets.only(left: 20,right: 20),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey.shade300),
+                            borderRadius: BorderRadius.circular(8),
+                            color: Colors.grey.shade100,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                task.title ?? "No Title",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(height: 4),
+                              Text(
+                                task.description ?? "No Description",
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )),
+                  ],
+                ),
+              ),
+            )),
             Container(
               width: Get.width,
+              padding: EdgeInsets.all(10),
               child: Column(
                 children: [
                   Text("Create TODO", style: TextStyle(
@@ -74,7 +125,7 @@ class HomePage extends GetView<HomeController> {
                     ),
                     child: Text("Create", style: TextStyle(color: Colors.white),),
                     onPressed: () {
-
+                      controller.createTask();
                     },
                   ),
                 ],

@@ -5,7 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import '../routers/app_routes.dart';
 import 'local_storage.dart';
 
-var baseUrl = "http://10.45.2.195:8181/api/v1";
+var baseUrl = "http://10.45.3.91:8181/api/v1";
 
 class ApiRequest {
   Dio _dio() {

@@ -7,7 +7,7 @@ import '../../common/routers/app_routes.dart';
 import '../../models/login.dart';
 
 class LoginController extends GetxController {
-  int pageIdx = 1;
+  int pageIdx = 0;
 
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
