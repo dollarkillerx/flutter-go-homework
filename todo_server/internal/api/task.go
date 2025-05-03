@@ -77,9 +77,6 @@ func (t *TaskController) updateTask(ctx *gin.Context) {
 	}
 
 	err := t.storage.UpdateTodoByID(payload.ID, &models.Todo{
-		BaseModel: models.BaseModel{
-			ID: payload.ID,
-		},
 		UserID:      user_id.(string),
 		Title:       payload.Title,
 		Description: payload.Description,
