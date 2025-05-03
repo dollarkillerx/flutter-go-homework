@@ -1,6 +1,8 @@
 services:
   todo_service:
     image: todo_service:latest
+    volumes:
+      - ./configs/:/root/configs/
     ports:
       - "8181:8181"
     restart: unless-stopped
