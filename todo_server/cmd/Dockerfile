@@ -1,5 +1,5 @@
 # Stage 1: Build stage
-FROM --platform=linux/amd64 golang:1.23.2-alpine AS builder
+FROM golang:1.23.2-alpine AS builder
 
 RUN apk add --no-cache gcc
 RUN apk add --no-cache build-base
@@ -26,7 +26,7 @@ COPY . ./
 RUN CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go build -o main cmd/main.go
 
 # Stage 2: Run stage
-FROM amd64/alpine:3.21.0
+FROM alpine:3.21.0
 
 # Set working directory inside the container
 WORKDIR /root/

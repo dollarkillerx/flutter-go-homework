@@ -26,7 +26,9 @@ func (s *Storage) CreateTodo(todo *models.Todo) error {
 }
 
 func (s *Storage) UpdateTodoByID(id string, todo *models.Todo) error {
-	err := s.db.Model(&models.Todo{}).Where("id = ?", id).Updates(todo).Error
+	err := s.db.Model(&models.Todo{}).
+		Where("id = ?", id).
+		Where("user_id = ?", todo.UserID).Updates(todo).Error
 	if err != nil {
 		log.Error().Msgf("Failed to update todo: %s", err)
 		return errors.WithStack(err)

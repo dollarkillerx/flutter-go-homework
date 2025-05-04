@@ -24,7 +24,7 @@ func Auth(secretKey string) gin.HandlerFunc {
 
 		if err != nil {
 			response.Response(c, 401, err.Error(), nil)
-			c.Abort()
+			c.Abort() // 中断请求
 			return
 		}
 
@@ -39,6 +39,6 @@ func Auth(secretKey string) gin.HandlerFunc {
 			return
 		}
 
-		c.Next()
+		c.Next() // 继续处理请求
 	}
 }
